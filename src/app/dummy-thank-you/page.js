@@ -102,7 +102,7 @@ export default function DummyThankYou() {
       {/* Inject environment variable for API base URL */}
       <Script id="env-config" strategy="beforeInteractive">
         {`
-          window.DEBUG_API_BASE_URL = '${process.env.NEXT_PUBLIC_API_BASE_URL || 'https://ga4-debug.vercel.app/'}';
+          window.DEBUG_API_BASE_URL = '${process.env.NEXT_PUBLIC_API_BASE_URL || 'https://ga4-debug.onrender.com/'}';
         `}
       </Script>
       

@@ -6,7 +6,7 @@
     'use strict';
     
     // Configuration - Uses environment variable or falls back to localhost
-    const DEBUG_API_URL = "https://ga4-debug.vercel.app" || window.DEBUG_API_BASE_URL || 'http://localhost:3000';
+    const DEBUG_API_URL = "https://ga4-debug.onrender.com" || window.DEBUG_API_BASE_URL || 'http://localhost:3000';
     const DEBUG_API_ENDPOINT = `${DEBUG_API_URL}/api/debug-data`;
     
     // Generate unique session ID

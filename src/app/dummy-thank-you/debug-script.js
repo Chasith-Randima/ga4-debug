@@ -6,7 +6,7 @@
     'use strict';
     
     // Configuration - Update this URL to your debug API endpoint
-    const DEBUG_API_URL = 'https://ga4-debug.vercel.app/api/debug-data';
+    const DEBUG_API_URL = 'https://ga4-debug.onrender.com/api/debug-data';
     
     // Generate unique session ID
     const sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
