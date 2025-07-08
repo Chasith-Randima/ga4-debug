@@ -3,6 +3,14 @@ import clientPromise from '../../../lib/mongodb';
 
 export async function GET() {
   try {
+    // Check if MongoDB is configured
+    if (!process.env.MONGODB_URI) {
+      return NextResponse.json(
+        { error: 'MongoDB not configured' },
+        { status: 500 }
+      );
+    }
+
     const client = await clientPromise;
     const db = client.db('mydatabase');
     const collection = db.collection('items');
@@ -28,6 +36,14 @@ export async function POST(request) {
       return NextResponse.json(
         { error: 'Name and description are required' },
         { status: 400 }
+      );
+    }
+    
+    // Check if MongoDB is configured
+    if (!process.env.MONGODB_URI) {
+      return NextResponse.json(
+        { error: 'MongoDB not configured' },
+        { status: 500 }
       );
     }
     

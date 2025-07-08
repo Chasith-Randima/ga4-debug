@@ -18,6 +18,14 @@ export async function POST(request) {
       debugInfo
     } = body;
 
+    // Check if MongoDB is configured
+    if (!process.env.MONGODB_URI) {
+      return NextResponse.json(
+        { error: 'MongoDB not configured' },
+        { status: 500 }
+      );
+    }
+
     const client = await clientPromise;
     const db = client.db('mydatabase');
     const collection = db.collection('debug_data');
@@ -56,6 +64,14 @@ export async function POST(request) {
 
 export async function GET() {
   try {
+    // Check if MongoDB is configured
+    if (!process.env.MONGODB_URI) {
+      return NextResponse.json(
+        { error: 'MongoDB not configured' },
+        { status: 500 }
+      );
+    }
+
     const client = await clientPromise;
     const db = client.db('mydatabase');
     const collection = db.collection('debug_data');
